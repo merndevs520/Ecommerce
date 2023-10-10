@@ -157,7 +157,7 @@ const Header = () => {
                     5 minites ago
                   </p>
                   <p className="text-xs font-semibold text-zinc-500">
-                    {user.role.name}
+                    {user?.role?.name}
                   </p>
                 </div>
               </p>{" "}

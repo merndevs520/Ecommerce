@@ -14,6 +14,9 @@ export const uploadcloud = async (img) => {
 export const Deletecloud = async (id) => {
   const logo = await cloudinary.v2.uploader.destroy(id);
 
+
+
+  
   return logo;
 };
 

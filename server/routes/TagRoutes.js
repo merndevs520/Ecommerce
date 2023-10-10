@@ -3,6 +3,7 @@ import {
   CreateTag,
   DeleteTag,
   GetallTag,
+  TagStatusUpdate,
 } from "../controllers/TagController.js";
 
 const router = express.Router();
@@ -11,6 +12,6 @@ const router = express.Router();
 
 router.route("/tag").get(GetallTag).post(CreateTag);
 
-router.route("/tag/:id").delete(DeleteTag);
+router.route("/tag/:id").delete(DeleteTag).put(TagStatusUpdate);
 
 export default router;

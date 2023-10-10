@@ -81,7 +81,6 @@ const authSlice = createSlice({
     builder.addCase(userMe.rejected, (state, action) => {
       (state.loading = false), console.log(action.error.message);
       (state.error = action.error.message), (state.user = null);
-      localStorage.removeItem("user");
     });
 
     // reset link

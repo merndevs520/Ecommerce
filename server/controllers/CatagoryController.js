@@ -38,7 +38,7 @@ export const CreateCatagroy = asynchandler(async (req, res) => {
       catagory = await Catagory.create({ name, slug, icon: caticon, photo });
     }
 
-    res.status(200).json(catagory);
+    res.status(200).json({ catagory, message: "catagory create succefull" });
     0;
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -61,7 +61,7 @@ export const GetallCatagory = asynchandler(async (req, res) => {
       },
     ]);
 
-    res.status(200).json(catagory);
+    res.status(200).json({ catagory, message: "all catagroys" });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

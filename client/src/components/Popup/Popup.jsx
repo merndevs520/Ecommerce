@@ -11,10 +11,13 @@ const Popup = (props) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {props.Header}
+          <Modal.Title
+            id="contained-modal-title-vcenter"
+            className="flex justify-between w-full"
+          >
+            <p>{props.Header}</p>
             <Button
-              className="bg-blue-400 ml-56 text-white font-semibold"
+              className="bg-blue-400 text-white font-semibold"
               onClick={props.onHide}
             >
               Close
@@ -22,7 +25,7 @@ const Popup = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>{props.children}</p>
+          <div>{props.children}</div>
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>

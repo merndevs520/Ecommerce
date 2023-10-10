@@ -9,8 +9,10 @@ export const CreateBrand = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;
     const slug = createSlug(name);
-    console.log(req.file);
-
+    console.table(req.file);
+    if (!name) {
+      res.status(400).json({ message: "name are requird" });
+    }
     // upoade to cloud
     let brandphto = await uploadcloud(req.file.path);
 
@@ -22,7 +24,7 @@ export const CreateBrand = asyncHandler(async (req, res) => {
 
     console.log(getPublicId(brand.logo));
     if (brand) {
-      res.json(brand);
+      res.json({ brand });
     }
   } catch (error) {
     res.status(400).json({ message: error.message });

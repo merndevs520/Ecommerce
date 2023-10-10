@@ -142,7 +142,7 @@ const Role = () => {
               className="border  w-full my-2 p-1 rounded-md"
             />
             <p>Permitions</p>
-            <p className="flex gap-2 border p-2 my-2 rounded-md">
+            <p className="flex gap-3 border p-2 my-2 rounded-md flex-wrap ">
               {admin.permission?.map((item, key) => {
                 return (
                   <p
